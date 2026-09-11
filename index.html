@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>Diagnóstico N2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">N2</span><span>DIAGNÓSTICO</span></div>
+      <div class="step-counter" id="stepCounter">Etapa 1 de 5</div>
+    </header>
+
+    <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+    <section class="intro-screen" id="introScreen">
+      <div class="eyebrow">DIAGNÓSTICO ESTRATÉGICO</div>
+      <h1>Descubra onde o seu negócio pode estar <span>perdendo oportunidades.</span></h1>
+      <p>Responda algumas perguntas sobre a sua empresa e tenha uma visão mais clara sobre aquisição, posicionamento e conversão.</p>
+      <div class="intro-meta"><span>◷ Cerca de 2 minutos</span><span>✓ Respostas confidenciais</span></div>
+      <button class="primary-btn" id="startBtn">Começar diagnóstico <span>→</span></button>
+      <div class="note">Não existem respostas certas ou erradas. Queremos entender o seu cenário real.</div>
+    </section>
+
+    <form id="diagnosticForm" class="diagnostic-form" novalidate>
+      <section class="step active" data-step="1">
+        <div class="badge">01 — O SEU NEGÓCIO</div>
+        <h2>Vamos começar pelo seu negócio.</h2>
+        <p class="subtitle">Antes de analisar aquisição, queremos entender rapidamente o que você faz.</p>
+
+        <label>O que a sua empresa faz principalmente?</label>
+        <div class="cards grid-2" id="tipoNegocio">
+          <button type="button" class="choice" data-value="Vendo produtos">Vendo produtos</button>
+          <button type="button" class="choice" data-value="Presto serviços">Presto serviços</button>
+          <button type="button" class="choice" data-value="Vendo produtos e presto serviços">Vendo produtos e presto serviços</button>
+          <button type="button" class="choice" data-value="Sou profissional / autónomo">Sou profissional / autónomo</button>
+          <button type="button" class="choice" data-value="Outro">Outro</button>
+        </div>
+        <input class="conditional" id="outroSegmentoNegocio" placeholder="Conte brevemente o que você faz." maxlength="120">
+
+        <label>Em que segmento você atua?</label>
+        <div class="cards grid-3" id="segmento">
+          <button type="button" class="choice" data-value="Imobiliário">Imobiliário</button>
+          <button type="button" class="choice" data-value="Automóvel">Automóvel</button>
+          <button type="button" class="choice" data-value="Beleza e estética">Beleza e estética</button>
+          <button type="button" class="choice" data-value="Alimentação">Alimentação</button>
+          <button type="button" class="choice" data-value="Construção">Construção</button>
+          <button type="button" class="choice" data-value="Saúde">Saúde</button>
+          <button type="button" class="choice" data-value="Educação">Educação</button>
+          <button type="button" class="choice" data-value="Tecnologia">Tecnologia</button>
+          <button type="button" class="choice" data-value="Consultoria">Consultoria</button>
+          <button type="button" class="choice" data-value="Serviços profissionais">Serviços profissionais</button>
+          <button type="button" class="choice" data-value="Comércio">Comércio</button>
+          <button type="button" class="choice" data-value="Outro">Outro</button>
+        </div>
+        <input class="conditional" id="outroSegmento" placeholder="Qual é o seu segmento?" maxlength="80">
+      </section>
+
+      <section class="step" data-step="2">
+        <div class="badge">02 — AQUISIÇÃO</div>
+        <h2>Como os clientes chegam até você hoje?</h2>
+        <p class="subtitle">Queremos entender de onde vêm as oportunidades que mantêm o seu negócio em movimento.</p>
+        <label>Você pode selecionar mais de uma opção.</label>
+        <div class="cards grid-2" id="fontes">
+          <button type="button" class="choice multi" data-value="Indicações">Indicações</button>
+          <button type="button" class="choice multi" data-value="Instagram / Facebook">Instagram / Facebook</button>
+          <button type="button" class="choice multi" data-value="WhatsApp">WhatsApp</button>
+          <button type="button" class="choice multi" data-value="Google">Google</button>
+          <button type="button" class="choice multi" data-value="Anúncios pagos">Anúncios pagos</button>
+          <button type="button" class="choice multi" data-value="Prospecção ativa">Prospecção ativa</button>
+          <button type="button" class="choice multi" data-value="Local físico">Local físico</button>
+          <button type="button" class="choice multi" data-value="Parceiros">Parceiros</button>
+          <button type="button" class="choice multi" data-value="Várias fontes">Várias fontes</button>
+          <button type="button" class="choice multi" data-value="Não tenho uma fonte consistente">Não tenho uma fonte consistente</button>
+        </div>
+        <div class="context-message">Agora queremos entender o que acontece depois que essa pessoa encontra o seu negócio.</div>
+      </section>
+
+      <section class="step" data-step="3">
+        <div class="badge">03 — GARGALO</div>
+        <h2>Se pudesse eliminar apenas um problema do seu negócio hoje, qual seria?</h2>
+        <p class="subtitle">Escolha o que mais se aproxima da sua realidade.</p>
+        <div class="cards one-col" id="gargalo">
+          <button type="button" class="choice" data-value="Poucas pessoas conhecem a minha empresa.">Poucas pessoas conhecem a minha empresa.</button>
+          <button type="button" class="choice" data-value="Tenho dificuldade em atrair novos clientes.">Tenho dificuldade em atrair novos clientes.</button>
+          <button type="button" class="choice" data-value="As pessoas demonstram interesse, mas poucas entram em contacto.">As pessoas demonstram interesse, mas poucas entram em contacto.</button>
+          <button type="button" class="choice" data-value="Recebo contactos, mas poucos avançam.">Recebo contactos, mas poucos avançam.</button>
+          <button type="button" class="choice" data-value="Tenho dificuldade em mostrar o valor do meu produto ou serviço.">Tenho dificuldade em mostrar o valor do meu produto ou serviço.</button>
+          <button type="button" class="choice" data-value="A minha presença digital não transmite o nível da empresa.">A minha presença digital não transmite o nível da empresa.</button>
+          <button type="button" class="choice" data-value="Dependo demasiado de indicações.">Dependo demasiado de indicações.</button>
+          <button type="button" class="choice" data-value="Não sei exatamente o que está funcionando no meu marketing.">Não sei exatamente o que está funcionando no meu marketing.</button>
+          <button type="button" class="choice" data-value="Tenho clientes, mas quero aumentar o volume.">Tenho clientes, mas quero aumentar o volume.</button>
+          <button type="button" class="choice" data-value="Tenho dificuldade em transformar atenção em oportunidades reais.">Tenho dificuldade em transformar atenção em oportunidades reais.</button>
+        </div>
+        <div class="context-message">Entendido. Agora vamos olhar para onde você quer chegar.</div>
+      </section>
+
+      <section class="step" data-step="4">
+        <div class="badge">04 — PRÓXIMO NÍVEL</div>
+        <h2>Se pudesse melhorar apenas uma coisa, o que teria maior impacto?</h2>
+        <div class="cards grid-2" id="objetivo">
+          <button type="button" class="choice" data-value="Atrair mais clientes">Atrair mais clientes</button>
+          <button type="button" class="choice" data-value="Gerar mais pedidos e orçamentos">Gerar mais pedidos e orçamentos</button>
+          <button type="button" class="choice" data-value="Conseguir clientes mais qualificados">Conseguir clientes mais qualificados</button>
+          <button type="button" class="choice" data-value="Aumentar vendas ou contratos">Aumentar vendas ou contratos</button>
+          <button type="button" class="choice" data-value="Fortalecer a minha marca">Fortalecer a minha marca</button>
+          <button type="button" class="choice" data-value="Melhorar a minha presença digital">Melhorar a minha presença digital</button>
+          <button type="button" class="choice" data-value="Ter uma aquisição mais previsível">Ter uma aquisição mais previsível</button>
+          <button type="button" class="choice" data-value="Melhorar o atendimento e a conversão">Melhorar o atendimento e a conversão</button>
+          <button type="button" class="choice" data-value="Conseguir clientes de maior valor">Conseguir clientes de maior valor</button>
+        </div>
+
+        <label>Onde você gostaria de estar daqui a 6–12 meses?</label>
+        <div class="cards grid-3" id="visao">
+          <button type="button" class="choice" data-value="Ter mais clientes">Ter mais clientes</button>
+          <button type="button" class="choice" data-value="Aumentar o faturamento">Aumentar o faturamento</button>
+          <button type="button" class="choice" data-value="Ser referência no meu mercado">Ser referência no meu mercado</button>
+          <button type="button" class="choice" data-value="Ter uma empresa mais previsível">Ter uma empresa mais previsível</button>
+          <button type="button" class="choice" data-value="Expandir o negócio">Expandir o negócio</button>
+          <button type="button" class="choice" data-value="Conseguir clientes de maior valor">Conseguir clientes de maior valor</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="5">
+        <div class="badge">05 — CONTEXTO E CONTACTO</div>
+        <h2>Estamos quase lá.</h2>
+        <p class="subtitle">Já entendemos o seu negócio, como os clientes chegam até você, o principal gargalo e onde você quer chegar.</p>
+        <p class="subtitle">Agora precisamos de algumas informações para contextualizar a análise.</p>
+
+        <label>Qual é o faturamento médio mensal da sua empresa?</label>
+        <div class="cards grid-3" id="faturamento">
+          <button type="button" class="choice" data-value="Até 10.000 MT">Até 10.000 MT</button>
+          <button type="button" class="choice" data-value="10.000 – 30.000 MT">10.000 – 30.000 MT</button>
+          <button type="button" class="choice" data-value="30.000 – 50.000 MT">30.000 – 50.000 MT</button>
+          <button type="button" class="choice" data-value="50.000 – 100.000 MT">50.000 – 100.000 MT</button>
+          <button type="button" class="choice" data-value="100.000+ MT">100.000+ MT</button>
+        </div>
+        <div class="hint">Não precisamos de um número exato. Esta informação serve apenas para contextualizar o seu cenário.</div>
+
+        <div class="fields">
+          <div class="field"><label for="nome">Nome completo</label><input id="nome" placeholder="O seu nome completo" autocomplete="name"></div>
+          <div class="field"><label for="empresa">Empresa</label><input id="empresa" placeholder="Nome da empresa" autocomplete="organization"></div>
+          <div class="field"><label for="whatsapp">WhatsApp</label><div class="phone-wrap"><span>+258</span><input id="whatsapp" inputmode="numeric" maxlength="9" placeholder="+258" autocomplete="tel"></div><small>Introduza os 9 dígitos do seu WhatsApp.</small></div>
+        </div>
+      </section>
+
+      <div class="error-box" id="errorBox"></div>
+
+      <div class="navigation">
+        <button type="button" class="back-btn" id="backBtn">← Voltar</button>
+        <button type="button" class="next-btn" id="nextBtn">Continuar <span>→</span></button>
+      </div>
+    </form>
+
+    <section class="success-screen" id="successScreen">
+      <div class="success-icon">✓</div>
+      <div class="badge">DIAGNÓSTICO RECEBIDO ✓</div>
+      <h2>Recebemos as suas respostas.</h2>
+      <p>Agora temos contexto suficiente para analisar o cenário da sua empresa.</p>
+
+      <div class="summary">
+        <div><small>SEU PRINCIPAL GARGALO</small><strong id="sumGargalo"></strong></div>
+        <div><small>SEU PRINCIPAL OBJETIVO</small><strong id="sumObjetivo"></strong></div>
+        <div><small>COMO OS SEUS CLIENTES CHEGAM</small><strong id="sumFontes"></strong></div>
+      </div>
+
+      <div class="next-step"><small>PRÓXIMO PASSO</small><h3>Vamos analisar o seu cenário.</h3><p>Vamos analisar o seu cenário com base nas informações que você forneceu.</p></div>
+
+      <div class="whatsapp-card">
+        <div class="wa-icon">◉</div>
+        <div><h3>Quer falar com a N2 agora?</h3><p>Se preferir não esperar pela análise, pode falar diretamente com a nossa equipa pelo WhatsApp.</p></div>
+        <a id="whatsappBtn" target="_blank" rel="noopener">Falar com a N2 agora →</a>
+      </div>
+    </section>
+
+    <footer>N2 · Diagnóstico estratégico</footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
